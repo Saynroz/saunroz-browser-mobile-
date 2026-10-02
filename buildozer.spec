@@ -5,7 +5,7 @@ package.domain = org.saynroz
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,html
 version = 0.1
-requirements = python3,kivy,pyjnius,android
+requirements = python3,kivy,pyjnius,android,charset-normalizer==3.3.2
 orientation = portrait
 fullscreen = 1
 android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,ACCESS_NETWORK_STATE
@@ -17,3 +17,4 @@ android.allow_backup = True
 android.wakelock = True
 android.presplash_color = #0a0a0f
 android.accept_sdk_license = True
+p4a.branch = develop
