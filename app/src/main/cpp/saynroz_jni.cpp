@@ -1,5 +1,11 @@
 #include <jni.h>
-#include "saynroz.cpp"
+#include <string>
+
+// Объявления функций из saynroz.cpp
+extern const char* get_canon_quote(int index);
+extern std::string vpn_connect(const std::string& country_code);
+extern bool is_blocked(const std::string& url);
+extern std::string get_search_url(const std::string& engine, const std::string& query);
 
 extern "C" {
 
