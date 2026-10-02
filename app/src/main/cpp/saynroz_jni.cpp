@@ -40,4 +40,4 @@ Java_org_saynroz_browser_SaynrozBridge_getSearchUrl(JNIEnv* env, jobject, jstrin
     return env->NewStringUTF(result.c_str());
 }
 
-}
+} 
