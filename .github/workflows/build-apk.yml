@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      PIP_CONSTRAINT: ${{ github.workspace }}/constraints.txt
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,9 +23,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev build-essential ccache
 
+      - name: Write pip constraint
+        run: echo "pip<26" > constraints.txt
+
       - name: Install buildozer
         run: |
-          pip install --upgrade pip
+          pip install --upgrade "pip<26"
           pip install buildozer cython==0.29.36
 
       - name: Build APK
