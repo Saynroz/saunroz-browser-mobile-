@@ -1,0 +1,17 @@
+[app]
+title = Saynroz Browser
+package.name = saynrozbrowser
+package.domain = org.saynroz
+source.dir = .
+source.include_exts = py,png,jpg,kv,atlas,html
+version = 0.1
+requirements = python3,kivy,pyjnius,android,kivy_garden.webview
+orientation = portrait
+fullscreen = 1
+android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,ACCESS_NETWORK_STATE
+android.api = 33
+android.minapi = 24
+android.archs = arm64-v8a
+android.allow_backup = True
+android.wakelock = True
+android.presplash_color = #0a0a0f
