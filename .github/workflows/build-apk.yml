@@ -22,4 +22,4 @@ jobs:
         with:
           name: saynroz-apk
           path: bin/*.apk
-          retention-days: 30
+          retention-days: 30 
