@@ -15,7 +15,7 @@ static const char* CANON_QUOTES[] = {
     "ОДНОНОГИЙ ВСЕГДА УСКАКИВАЕТ."
 };
 
-const char* get_canon_quote(int index) {
+extern const char* get_canon_quote(int index) {
     if (index < 0 || index > 9) return CANON_QUOTES[0];
     return CANON_QUOTES[index];
 }
@@ -39,12 +39,12 @@ static std::vector<VpnCountry> VPN_COUNTRIES = {
     {"Гондурас", "HN", "185.42.11.", 150, 250},
 };
 
-std::string generate_vpn_ip(const std::string& prefix) {
+extern std::string generate_vpn_ip(const std::string& prefix) {
     int last_octet = 2 + (rand() % 252);
     return prefix + std::to_string(last_octet);
 }
 
-std::string vpn_connect(const std::string& country_code) {
+extern std::string vpn_connect(const std::string& country_code) {
     for (const auto& country : VPN_COUNTRIES) {
         if (country.code == country_code) {
             std::string ip = generate_vpn_ip(country.ip);
@@ -54,7 +54,7 @@ std::string vpn_connect(const std::string& country_code) {
     return "ОШИБКА: неизвестная страна";
 }
 
-bool is_blocked(const std::string& url) {
+extern bool is_blocked(const std::string& url) {
     const std::vector<std::string> blocked = {
         "yandex.ru", "ya.ru", "yandex.com",
         "edge.microsoft", "microsoft-edge"
@@ -65,7 +65,7 @@ bool is_blocked(const std::string& url) {
     return false;
 }
 
-std::string get_search_url(const std::string& engine, const std::string& query) {
+extern std::string get_search_url(const std::string& engine, const std::string& query) {
     if (engine == "Яндекс") return "https://yandex.ru/search/?text=" + query;
     if (engine == "Google") return "https://www.google.com/search?q=" + query;
     if (engine == "Bing") return "https://www.bing.com/search?q=" + query;
