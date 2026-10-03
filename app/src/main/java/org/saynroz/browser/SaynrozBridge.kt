@@ -7,4 +7,4 @@ object SaynrozBridge {
 
     external fun getCanonQuote(index: Int): String
     external fun isUrlBlocked(url: String): Boolean
-}
+} 
